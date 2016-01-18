@@ -18,45 +18,7 @@ sap.ui.controller("service_request_mgmt.srm_detail4", {
 				var obj1=getdata.cwSrmAttachmentDataDtos;
 				var oClkReqModel = that.getView().getModel('oClickReqModel');
 				oClkReqModel.setData(getdata);
-				var objDate = new Date();
-				var d = objDate.getDate();
-				var m = objDate.getMonth()+1;
-				var y = objDate.getFullYear();
-				var date= d+"-"+m+"-"+y;
-				var hours = objDate.getHours();
-				var minutes=objDate.getMinutes();
-				var createTime=oClkReqModel.getData().createdOn;
-				//string to object
-				var data = JSON.parse(createTime);
-				console.log(data);
-				
-				
-				currentTimeVal=date+" Time"+hours+":"+minutes;
-				
-				
-				x1=createTime.split("Time");
-				//y1=x1[1].split(":");
-				createTimehrs=y1[0];
-				createTimemin=y1[1];
-				
-				
-				x2=currentTimeVal.split("Time");
-				//y2=x2[1].split(":");
-				currentTimehrs=y2[0];
-				currentTimemin=y2[1];
-				
-				
-				elapsedtimehrs=parseInt(currentTimehrs)-parseInt(createTimehrs);
-				elapsedtimemin=parseInt(currentTimemin)-parseInt(createTimemin);
-				
-				
-				
-				var elapsed=elapsedtimehrs+":"+elapsedtimemin;
-				
-				that.getView().byId("idElapsedTime").setText("Time Elapsed: "+elapsed+" hrs");
-				
 				var sla=oClkReqModel.getData().agreedSla;
-				
 				 var list =[];
 				if(oClkReqModel.getData().cwSrmAttachmentDataDtos!=null)
 				{
@@ -157,29 +119,6 @@ sap.ui.controller("service_request_mgmt.srm_detail4", {
 			oClkReqModel.getData().currentStatus="Reject";
 			txtValue=sap.ui.getCore().byId('idTextArea2').getValue();
 		}
-		
-		 /*var list =[];
-			if(oClkReqModel.getData().cwSrmCommentDataDtos!=null)
-			{
-				
-				if(oClkReqModel.getData().cwSrmCommentDataDtos instanceof Array)
-				{
-					list=oClkReqModel.getData().cwSrmCommentDataDtos;
-				}
-				else {
-					list =[oClkReqModel.getData().cwSrmCommentDataDtos];
-				}
-				
-				
-			}
-			else if(oClkReqModel.getData().cwSrmCommentDataDtos == null)
-			{
-				list =[];
-			}
-			oClkReqModel.getData().cwSrmCommentDataDtos =list;
-			oClkReqModel.refresh();*/
-			
-
 		
 		var gdata = GetData("http://115.110.70.122:50000/cwsrm/rest/ume/loginuser");
 		var commentStrcture =  { "commentId" :"", 

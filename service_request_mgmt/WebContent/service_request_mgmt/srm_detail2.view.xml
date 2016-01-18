@@ -33,7 +33,7 @@
 							<Text text="{currentStatus}"></Text>
 							<Text text="{assignedToId}"></Text>
 							<Text text="{serviceType}"></Text>
-							<Text text="{createdOn}"></Text>
+							<Text text="{path:'createdOn',formatter:'fnFormatDate'}"></Text>
 						</cells>
 					</ColumnListItem>
 				</items>
