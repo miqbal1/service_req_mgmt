@@ -1,0 +1,161 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified"
+	xmlns:table="sap.ui.table" controllerName="service_request_mgmt.srm_detail1"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="createNewReq" title="Service Management tool" class="sapUiStdPage myPageHeader">
+		<content>
+			<l:Grid binding="{}" class="sapUiSmallMarginTop" vSpacing=".5"
+				defaultSpan="L3 M3 S10">
+				<l:content>
+					<Text id="reqType" text="Request Type " width="100%" textAlign="Center" class="textPadding" >
+					  <layoutData>
+							<l:GridData span="L2 M6 S12" linebreakL="false"
+								linebreakM="false" linebreakS="true" />
+
+						</layoutData>
+					</Text>
+					<Select id="reqSelect" width="100%" height="" change="onChangeReqType"
+						items="{oDropDownModel>/data}">
+						<core:Item key="{oDropDownModel>dept}" text="{oDropDownModel>dept}" />
+					</Select>
+					<Text id="ctlg" text="Catalog" width="100%" textAlign="Center" class="textPadding">
+					<layoutData>
+							<l:GridData span="L2 M6 S12" linebreakL="false"
+								linebreakM="false" linebreakS="true" />
+
+					</layoutData>
+					</Text>
+					<Select id="idCatalogDD" width="100%" height="2.1rem" items="{oDropDownModel>catalogue}"
+						enabled="false" change="onChangeCatalog">
+						<core:Item key="{oDropDownModel>service}" text="{oDropDownModel>service}" />
+					</Select>
+					<Text id="serType" text="Service Type " width="100%" textAlign="Center" class="textPadding" >
+					<layoutData>
+							<l:GridData span="L2 M6 S12" linebreakL="true"
+								linebreakM="true" linebreakS="true" />
+
+					</layoutData>
+					</Text>
+					<Select width="100%" id='idTypeDD' items="{oDropDownModel>service_type}"
+						enabled="false">
+						<core:Item key="{oDropDownModel>type}" text="{oDropDownModel>type}" />
+					</Select>
+					<Text id="contact" text="Contact" width="100%" textAlign="Center" class="textPadding" >
+					<layoutData>
+							<l:GridData span="L2 M6 S12" linebreakL="false"
+								linebreakM="false" linebreakS="true" />
+
+					</layoutData>
+					</Text>
+					<Input type="Text" id="contacttextId" width="100%"
+						liveChange="" showSuggestion="true" suggestionItems="{oDropDownModel>/valuehelp}">
+						<suggestionItems>
+							<core:Item key="{name}" text="{oDropDownModel>name}" />
+						</suggestionItems>
+					</Input>
+					<Text id="priority" text="Priority" width="100%" textAlign="Center" class="textPadding" >
+					<layoutData>
+							<l:GridData span="L2 M6 S12" linebreakL="true"
+								linebreakM="true" linebreakS="true" />
+
+					</layoutData>
+					</Text>
+					<Select id="prioritySelect" width="100%"
+						items="{oDropDownModel>/periority}">
+						<core:Item key="{oDropDownModel>status}" text="{oDropDownModel>status}" />
+					</Select>
+					<HBox class='hrClass'>
+						<layoutData>
+							<l:GridData span="L12 M12 S12" linebreakL="true"
+								linebreakM="true" linebreakS="true" />
+
+						</layoutData>
+					</HBox>
+					<Text id="reason" text="Reason" width="100%" textAlign="Center" class="textPadding" >
+					  <layoutData>
+							<l:GridData span="L2 M6 S12" linebreakL="false"
+								linebreakM="false" linebreakS="true" />
+
+						</layoutData>
+					</Text>
+					<Select id="reasonSelect" width="100%" items="{oDropDownModel>reason}"
+						enabled="false">
+						<core:Item key="{oDropDownModel>desc}" text="{oDropDownModel>desc}" />
+					</Select>
+					<Text id="accName" text="Account Name" width="100%" textAlign="Center" class="textPadding" >
+					<layoutData>
+							<l:GridData span="L2 M6 S12" linebreakL="false"
+								linebreakM="false" linebreakS="true" />
+
+					</layoutData>
+					</Text>
+					<Input type="Text" id="acctextField" width="100%"
+						liveChange="" showSuggestion="true" suggestionItems="{/data}">
+						<suggestionItems>
+							<core:Item text="{services}" />
+						</suggestionItems>
+					</Input>
+					<Text id="subject" text="Subject" width="100%" textAlign="Center" class="textPadding" >
+					<layoutData>
+							<l:GridData span="L2 M6 S12" linebreakL="true"
+								linebreakM="true" linebreakS="true" />
+
+					</layoutData>
+					</Text>
+					<Input id="idSubjectInput" type="Text" width="100%" class="sapUiSmallMarginBottom" />
+
+					<Text id="description" text="Description" width="100%" textAlign="Center" class="textPadding" >
+					<layoutData>
+							<l:GridData span="L2 M6 S12" linebreakL="false"
+								linebreakM="false" linebreakS="true" />
+
+					</layoutData>
+					</Text>
+					<Input id="idDescInput" type="Text" width="100%" class="sapUiSmallMarginBottom"/>
+					</l:content>
+					</l:Grid>
+					<HBox class='hrClass'/>
+					<Title text="Attachements" class="myAttachmentTitle"/>
+						<Table id="idMyAttchmentTbl" width="60%" mode="Delete" delete="onPressDelete" class="myAttchTable"
+				        items="{oDropDownModel>/UploadedFiles}" inset="true">
+				        <headerToolbar>
+				        	<Toolbar class="" id="toolbar1">
+		                    <u:FileUploader id="fileUploaderACRDoc" name="fileUploaderACRDoc"
+							uploadUrl="upload/"  tooltip="Upload your file to the local server"
+							uploadComplete="handleUploadComplete" />
+						     <Button text="Upload Document" press="handleUploadPress"/>
+	                    </Toolbar>
+				        </headerToolbar>
+				        
+				       <columns>
+					  <Column width='8%' hAlign="Center">
+						<Text text="Attachment" class="textBold" />
+					</Column>
+					<Column width='6%' hAlign="Center">
+						<Text text="Type" class="textBold" />
+					</Column>
+					<Column width='8%' hAlign="Center">
+						<Text text="Updated By" class="textBold" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							
+							<Text text="{oDropDownModel>FileName}"></Text>
+							<Text text="{oDropDownModel>FileType}"></Text>
+							<Text text="{oDropDownModel>UploadedBy}"></Text>
+							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<Button text="Create" press="onPressCreateValidation"
+				class="createBtnPadding" />
+			<Button text="Create another" press="onPressCreateAnother"
+				class="bottom1Padding" />
+			<Button text="Cancel" press="onPressCancel"
+				class="bottom1Padding" />
+		</content>
+	</Page>
+</core:View>

@@ -1,0 +1,22 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout"
+	xmlns:table="sap.ui.table" controllerName="service_request_mgmt.srm_master"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<Page id="master" icon="sap-icon://action" class="sapUiStdPage myPageHeader" title="SRM">
+		<content>
+			<List itemPress="onListItemPress" mode='SingleSelectMaster'
+				select='onItemPress' class="cssItemList">
+				<items >
+					<StandardListItem title="Dashboard" type="Active"
+						press="onPressGoToDashboard" />
+					<StandardListItem title="Create New Request" type="Active"
+						press="onPressGoToCreateNewReq" />
+					<StandardListItem title="My Request" type="Active"
+						press="onPressGoToMyReq" />
+					<StandardListItem title="My Inbox" type="Active" />
+				</items>
+			</List>
+		</content>
+	</Page>
+</core:View>

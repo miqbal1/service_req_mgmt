@@ -1,0 +1,43 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="service_request_mgmt.srm_detail2"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="myReq" title="My Requests" class="sapUiStdPage myPageHeader">
+		<content>
+			<Table id="idMyRequestTbl"
+				items="{/cwSrmRequestDataDtos}" inset="true">
+				<columns>
+					<Column width='8.4%' hAlign="Center">
+						<Text text="Request Id" class="textBold" />
+					</Column>
+					<Column width='8.4%' hAlign="Center">
+						<Text text="Subject" class="textBold" />
+					</Column>
+					<Column width='10.4%' hAlign="Center">
+						<Text text="Current Status" class="textBold" />
+					</Column>
+					<Column width='8.4%' hAlign="Center">
+						<Text text="Assigned To" class="textBold" />
+					</Column>
+					<Column width='8.4%' hAlign="Center">
+						<Text text="Service Type" class="textBold" />
+					</Column>
+					<Column width='8.4%' hAlign="Center">
+						<Text text="Created On" class="textBold" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Link text="{requestId}" press="onPressRequestId" />
+							<Text text="{cwSrmContentDataDtosMap/entry/1/value/dataValue}"></Text>
+							<Text text="{currentStatus}"></Text>
+							<Text text="{assignedToId}"></Text>
+							<Text text="{serviceType}"></Text>
+							<Text text="{createdOn}"></Text>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</core:View>

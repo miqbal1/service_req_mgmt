@@ -1,0 +1,72 @@
+{"data" : 
+	   [
+	   {
+	    "dept" : "IT" ,
+	    "catalogue" : [{"service" : "Software" , "service_type" :[
+	                   {"type" : " Reinstallation"},
+	                   {"type" : "Password Change"}
+	      ] },
+	                   {"service" : "infrastructure" , "service_type" :[
+	                   {"type" : "Adding a New Mail id"},
+	                   {"type" : "Password "}
+	      ]}
+	                  ],
+	     "reason": [{"desc" : "IT Reason"}]
+	     
+	    },
+	   
+	    {
+	     "dept" : "HR" ,
+	     "catalogue" : [{"service" : "Employee Queries" , "service_type" :[
+	                   {"type" : "HR TYPE1"},
+	                   {"type" : "HR TYPE2"}
+	      ] },
+	                   {"service" : "Employee Leave Request" , "service_type" :[
+	                   {"type" : "L1"},
+	                   {"type" : "L2"}
+	      ] }
+	                  ],
+	      "reason": [{"desc" : "HR Reason"}]
+	    },
+	    {
+	     "dept" : "Finance" ,
+	     "catalogue" : [{"service" : "Policy Request" , "service_type" :[
+	                   {"type" : "Change Policy Name"},
+	                   {"type" : "Change Policy Id"}
+	      ] },
+	                   {"service" : "Refund Request" , "service_type" :[
+	                   {"type" : "Product Issue"},
+	                   {"type" : "Damaged Product"}
+	      ] }
+	                  ],
+	     "reason": [{"desc" : "Financial Reason"}]
+	    },
+	    {
+	     "dept" : "Order" ,
+	     "catalogue" : [{"service" : "Open Order" , "service_type" :[
+	                   {"type" : "Intiate a new order"},
+	                   {"type" : "Change order"}
+	      ] },
+	                   {"service" : "Close Order" , "service_type" :[
+	                   {"type" : "Adobe Reinstallation"},
+	                   {"type" : "Password Change"}
+	      ] }
+	                  ],
+	    "reason": [{"desc" : "Order Reason"}]
+	    }
+	    
+	    ],
+	    
+	  "valuehelp" :[{"name" : "Iqbal Md" , "id":"miqbal"},
+	                {"name" : "Rohit J" , "id":"jrohit"},
+	                {"name" : "Rahul B" , "id":"rahulb"},
+	                {"name" : "bpmuser5" , "id":"bpmuser5"},
+	                {"name" : "bpmuser6" , "id":"bpmuser6"}
+	               ],
+	  "periority" :[{"status" : "Low"},
+	     {"status" : "Medium"},
+	     {"status" : "High"}
+	    ],
+	    "UploadedFiles":[],
+	    "isEnabled" : "false"
+}

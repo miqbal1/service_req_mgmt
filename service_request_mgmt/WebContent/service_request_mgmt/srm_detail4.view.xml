@@ -1,0 +1,145 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="service_request_mgmt.srm_detail4"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Request Detail" class="sapUiStdPage myPageHeader">
+		<content>
+
+			<Text text="{oClickReqModel>/requestId}" class="myReqTitle" width="9rem" />
+			<HBox >
+				<TextArea class="mySlacolor" value="       SLA" editable="false" />
+				<TextArea class="myTimeElapsedcolor" value="       Time Elapsed" editable="false"/>
+				<VBox>
+				<Text text="Time Taken : {oClickReqModel>/agreedSla} hrs" class="myTimeTakenTitle"></Text>
+				<Text id="idElapsedTime" class="myTimeTakenTitle"></Text>
+				</VBox>
+			</HBox>
+			<IconTabBar id="idIconTabBar" select="handleIconTabBarSelect"
+				class="sapUiResponsiveContentPadding">
+				<items>
+					<!-- <Text text="Request Type " width="9rem" class="textPadding" /> -->
+					<IconTabFilter icon="sap-icon://request" iconColor="Positive"
+						text="Request" backgroundDesign="Transparent" key="request">
+						<content>
+							<HBox>
+								<Text id="reqType4" text="Request Type " width="9rem"
+									class="textPadding" />
+								<Input id="reqType4textId" type="Text"
+									value="{oClickReqModel>/requestType}" enabled="false"
+									textAlign="Center">
+								</Input>
+								<Text id="ctlg4" text="Catalog" width="9rem" class="textPadding2" />
+								<Input id="ctlg4textId" type="Text"
+									value="{oClickReqModel>/catalogType}" enabled="false"
+									textAlign="Center">
+								</Input>
+							</HBox>
+							<HBox>
+								<Text id="serType4" text="Service Type " width="9rem"
+									class="textPadding" />
+								<Input id="serType4textId" type="Text"
+									value="{oClickReqModel>/serviceType}" enabled="false"
+									textAlign="Center">
+								</Input>
+
+								<Text id="contact4" text="Contact" width="9rem" class="textPadding2" />
+
+								<Input id="contacttextId4" type="Text"
+									value="{oClickReqModel>/assignedToName}" enabled="false"
+									textAlign="Center">
+								</Input>
+							</HBox>
+							<HBox class="linePadding">
+								<Text id="priority4" text="Priority" width="9rem" class="textPadding" />
+								<Input id="priority4textId" type="Text"
+									value="{oClickReqModel>/priority}" enabled="false" textAlign="Center">
+								</Input>
+
+							</HBox>
+						</content>
+					</IconTabFilter>
+
+					<IconTabFilter icon="sap-icon://history" iconColor="Critical"
+						text="History" backgroundDesign="Transparent" key="history">
+						<content>
+                           <Text text="Creation Date: {oClickReqModel>/createdOn}" width="15rem" class="" />
+							<Table id="idMyInboxTbl" items="{oClickReqModel>/cwSrmCommentDataDtos}"
+								inset="true">
+								<columns>
+								     <Column width='8.4%' hAlign="Center">
+										<Text text="Comments" class="textBold" />
+									</Column>
+									<Column width='8.4%' hAlign="Center">
+										<Text text="Commented Date" class="textBold" />
+									</Column>
+									
+									<Column width='8.4%' hAlign="Center">
+										<Text text="By User" class="textBold" />
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										    <Text text="{oClickReqModel>comment}"></Text>
+										    <Text id="createdOn" text="{oClickReqModel>createdOn}"></Text>
+											<Text text="{oClickReqModel>createByName}"></Text>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+
+					<IconTabFilter icon="sap-icon://attachment"
+						iconColor="Positive" text="Attachement" backgroundDesign="Transparent"
+						key="attachment">
+						<content>
+
+							<Table id="idMyAttachmentTbl" items="{oClickReqModel>/cwSrmAttachmentDataDtos}" inset="true">
+								<columns>
+									<Column width='8.4%' hAlign="Center">
+										<Text text="Date" class="textBold" />
+									</Column>
+
+									<Column width='8.4%' hAlign="Center">
+										<Text text="Name" class="textBold" />
+									</Column>
+									<Column width='8.4%' hAlign="Center">
+										<Text text="Type" class="textBold" />
+									</Column>
+									<Column width='8.4%' hAlign="Center">
+										<Text text="User" class="textBold" />
+									</Column>
+
+
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{oClickReqModel>createdOn}"></Text>
+											<Text text="{oClickReqModel>attachmentName}"></Text>
+											<Text text="{oClickReqModel>attachmentType}"></Text>
+											<Text text="{oClickReqModel>createByName}"></Text>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+
+					<!-- <IconTabFilter icon="sap-icon://comment" iconColor="Critical" text="Comment" 
+						backgroundDesign="Transparent" key="comment"> <content> <Table id="idMyCommentTbl" 
+						items="{/results}" inset="true"> <columns> <Column width='8.4%' hAlign="Center"> 
+						<Text text="Date" class="textBold" /> </Column> <Column width='10.4%' hAlign="Center"> 
+						<Text text="Comment" class="textBold" /> </Column> <Column width='8.4%' hAlign="Center"> 
+						<Text text="User" class="textBold" /> </Column> </columns> <items> <ColumnListItem> 
+						<cells> <Text id="created" text="{CreatedOn}"></Text> <Text text="{Status}"></Text> 
+						<Text text="{Priority}"></Text> </cells> </ColumnListItem> </items> </Table> 
+						</content> </IconTabFilter> -->
+				</items>
+			</IconTabBar>
+			<HBox>
+				<Button id="idAcceptBtn" type="Emphasized" text="Accept" enabled="{screenBtnJsonModel>/data/isVisible}" press="onPressAccept" class="acceptBtnPadding" />
+				<Button id="idRejectBtn" type="Emphasized" text="Reject" enabled="{screenBtnJsonModel>/data/isVisible}" press="onPressReject" class="rejectBtnPadding" />
+
+			</HBox>
+		</content>
+	</Page>
+</core:View>

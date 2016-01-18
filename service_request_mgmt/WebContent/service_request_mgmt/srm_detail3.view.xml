@@ -1,0 +1,42 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="service_request_mgmt.srm_detail3"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="myInbox" title="My Inbox" class="sapUiStdPage myPageHeader">
+
+		<content>
+			<Table id="idMyInboxTbl"
+				items="{/results}" inset="true">
+				<columns>
+					<Column width='12%' hAlign="Center">
+						<Text text="Task Title" class="textBold" />
+					</Column>
+					<Column width='6%' hAlign="Center">
+						<Text text="Created On" class="textBold" />
+					</Column>
+					<Column width='6%' hAlign="Center">
+						<Text text="Status" class="textBold" />
+					</Column>
+					<Column width='6%' hAlign="Center">
+						<Text text="Priority" class="textBold" />
+					</Column>
+					
+					
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Link text="{TaskTitle}" press="onPressTaskTitle" />
+							<Text id="createdOn" text="{CreatedOn}"></Text>
+							<Text text="{Status}"></Text>
+							<!-- <Link text="{Vbeln}" wrapping='true' press='onOrderListDblClk' /> -->
+							<Text text="{Priority}"></Text>
+							
+							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+		</content>
+	</Page>
+</core:View>

@@ -1,0 +1,150 @@
+@CHARSET "ISO-8859-1";
+.sapMTitleStyleAuto {
+    font-size: 1.5rem;
+}
+#reqType {
+width : 120px;
+font-weight: bold;
+position: relative;
+  top: 14px;
+}
+.textPadding {
+	
+    padding-top: 1rem;
+    
+}
+.textPadding2 {
+	
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+.createBtnPadding{
+	
+	padding-left: 3rem;
+}
+.acceptBtnPadding{
+	padding-left: 2rem;
+	padding-top: .9rem;
+}
+.rejectBtnPadding{
+	padding-left: 2rem;
+	padding-top: .9rem;
+}
+.oKBtnPadding{
+	padding-left: 13rem;
+	padding-top: .9rem;
+}
+.cancelBtnPadding{
+	padding-left: 2rem;
+	padding-top: .9rem;
+}
+.tablePadding{
+	padding-left: 2rem;
+}
+.hboxPadding{
+	padding-left: 23rem;
+}
+.bottom0Padding{
+	padding-top: 0.5rem;
+	padding-left: 19rem;
+}
+.bottom1Padding{
+	padding-left: 2rem;
+}
+.hrClass{
+	
+	height:1px;
+	background:grey;
+	
+}
+.hrClass2{
+	padding-top: 0.0rem;
+	height:1px;
+	background:grey;
+	
+}
+.linePadding{
+	padding-bottom: 0.9rem;
+}
+.linePadding2{
+	padding-top: 0.9rem;
+	padding-bottom: 0.9rem;
+}
+
+#__xmlview4--reqSelect{
+	    height: 2.1rem
+}
+#__xmlview1--master-cont{
+	background-color: aliceblue;
+}
+#___page0-cont{
+	background-color: white;
+}
+.progressHeader {
+    /* background-color: #009688; */
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    
+}
+#__item0,#__item1,#__item2,#__item3{
+    background-color: aliceblue;
+}
+
+#__title0{
+	margin-top: 10px;
+    padding-left: 3rem;
+    color : #4D635F;
+}
+#__xmlview4--fileUploader{
+	margin-top: 10px;
+    margin-left: 2rem;
+}
+#__button1-inner{
+    margin-left: 2rem;
+}
+#__xmlview4--fileUploaderACRDoc-fu_input-inner{
+	width: 10rem;
+}
+#__xmlview4--createNewReq-intHeader-ariaLabel{
+	background-color: #009688;
+}
+#__page0-intHeader-BarPH{
+	background-color: #009688;
+}
+.sapMBtnInner{
+	background: #009688 !important;
+	border:none !important;
+	color:white !important;
+}
+.sapMIBar-CTX .sapMTitle {
+    color: #fff;
+    
+}
+.myPageHeader .sapMIBar.sapMHeader-CTX{
+	    color: #fff !important;
+	    background: #009688 !important;
+	    
+}
+.mySlacolor .sapMInputBaseInner.sapMInputBaseReadonlyInner {
+	background-color: #72D272;
+	padding : 0rem;
+}
+.myTimeElapsedcolor .sapMInputBaseInner.sapMInputBaseReadonlyInner{
+	background-color: #FB4A4A;
+	padding : 0rem;
+}
+.myReqTitle{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+.myAttchTable{
+padding-top: 0px;
+}
+.myAttachmentTitle .sapMTitle {
+	color : #54CE3F !important;
+}
+.myTimeTakenTitle {
+	font-style: oblique;
+	font-family: cursive;
+}

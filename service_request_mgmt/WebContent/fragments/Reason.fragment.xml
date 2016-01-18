@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<!-- <SelectDialog liveChange="_handleValueHelpSearch" confirm="_handleValueHelpClose" 
+		cancel="_handleValueHelpClose" items="{oWarehouseModel>/warehouse}"> <StandardListItem 
+		title="{oWarehouseModel>warehouseNumber}" /> </SelectDialog> -->
+	<Dialog id="idDialog" title="Accept">
+		<VBox>
+			<Text text="Please specify the reason"></Text>
+			<TextArea id="idTextArea" width="100%" value="" />
+			<HBox>
+				<Button type="Emphasized" text="Ok" class="oKBtnPadding"
+					press="onPressOk">
+				</Button>
+				<Button type="Emphasized" text="Cancel" class="cancelBtnPadding" press="onPressCancel">
+				</Button>
+			</HBox>
+		</VBox>
+	</Dialog>
+	<!-- <Dialog id="idDialog1" title="Reject">
+		<VBox>
+			<Text text="Please specify the reason"></Text>
+			<TextArea id="idTextArea1" width="100%" value="" />
+			<HBox>
+				<Button type="Emphasized" text="Ok" class="oKBtnPadding"
+					press="onPressOk">
+				</Button>
+				<Button type="Emphasized" text="Cancel" press="onPressCancel">
+				</Button>
+			</HBox>
+		</VBox>
+	</Dialog> -->
+</core:FragmentDefinition>

@@ -1,0 +1,25 @@
+ <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns:viz="sap.viz"
+	xmlns="sap.m" controllerName="service_request_mgmt.srm_dashboard"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	
+	<Page title="Dashboard" class="sapUiStdPage myPageHeader">
+		<content>
+		<viz:ui5.Pie id="samplepie" title="My Requests" width="40%">
+				<viz:dataset>
+					<viz:ui5.data.FlattenedDataset data="{/UserData/history}">
+						<viz:dimensions>
+							<viz:ui5.data.DimensionDefinition
+								axis="1" name="Status" value="{status}">
+							</viz:ui5.data.DimensionDefinition>
+						</viz:dimensions>
+						<viz:measures>
+							<viz:ui5.data.MeasureDefinition
+								name="Count" value="{quantity}">
+							</viz:ui5.data.MeasureDefinition>
+						</viz:measures>
+					</viz:ui5.data.FlattenedDataset>
+				</viz:dataset>
+			</viz:ui5.Pie>
+		</content>
+	</Page>
+</core:View> 
