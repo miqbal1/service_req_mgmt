@@ -61,7 +61,7 @@
 					<IconTabFilter icon="sap-icon://history" iconColor="Critical"
 						text="History" backgroundDesign="Transparent" key="history">
 						<content>
-                           <Text text="Creation Date: {oClickReqModel>/createdOn}" width="15rem" class="" />
+						<Text text="Creation Date: {path:'oClickReqModel>/createdOn',formatter:'.fnFormatDate'}"></Text>
 							<Table id="idMyInboxTbl" items="{oClickReqModel>/cwSrmCommentDataDtos}"
 								inset="true">
 								<columns>

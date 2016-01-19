@@ -138,6 +138,24 @@ sap.ui.controller("service_request_mgmt.srm_detail4", {
 		this._idTextArea.close();
 		
 	},
+fnFormatDate : function(createdOn) {
+		
+		var myRequestJsonModel = this.getView().getModel('myRequestJsonModel');
+		
+		var size=myRequestJsonModel.getData().cwSrmRequestDataDtos.length;
+		for(i=0;i<size;i++)
+		{
+			var date=myRequestJsonModel.getData().cwSrmRequestDataDtos[i].createdOn;
+			var myDate=new Date(date);
+			var d = myDate.getDate();
+			var m = myDate.getMonth()+1;
+			var y = myDate.getFullYear();
+			createdOn= d+"-"+m+"-"+y;
+			
+		}
+		return createdOn;
+	},
+	
 
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
