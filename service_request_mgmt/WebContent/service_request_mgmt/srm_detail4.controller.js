@@ -8,6 +8,7 @@ sap.ui.controller("service_request_mgmt.srm_detail4", {
 	_idTextArea :"",
 	_idTextArea2 :"",
 	onInit: function() {
+		
 		this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		var that=this;
 		this.oRouter.attachRoutePatternMatched(function(oEvent) {

@@ -47,10 +47,20 @@ sap.ui.controller("service_request_mgmt.srm_detail2", {
 		});
 		
 	},
-	fnFormatDate : function(dateVal) {
-		//Fri Jan 15 2016 14:47:28 GMT+0530 (India"
-		//require jan 15 2016
-		return dateVal.toUpperCase();
+fnFormatDate : function(createdOn) {
+		var myRequestJsonModel = this.getView().getModel('myRequestJsonModel');
+		var size=myRequestJsonModel.getData().cwSrmRequestDataDtos.length;
+		for(i=0;i<size;i++)
+		{
+			var date=myRequestJsonModel.getData().cwSrmRequestDataDtos[i].createdOn;
+			var myDate=new Date(date);
+			var d = myDate.getDate();
+			var m = myDate.getMonth()+1;
+			var y = myDate.getFullYear();
+			createdOn= d+"-"+m+"-"+y;
+			
+		}
+		return createdOn;
 	},
 	
 		
